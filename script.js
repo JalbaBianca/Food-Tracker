@@ -9,7 +9,7 @@ import AppData from './app-data.js';
 
 
 
-const API = new FetchWrapper('https://foodtracker.onrender.com/');
+//const API = new FetchWrapper('https://foodtracker.onrender.com/');
 const appData = new AppData;
 
 
