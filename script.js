@@ -1,4 +1,4 @@
-import FetchWrapper from "./fetch-wrapper.js";
+//import FetchWrapper from "./fetch-wrapper.js";
 import { capitalize, calculateCalories } from "./helpers.js";
 import AppData from './app-data.js';
 //import 'chart.js';
@@ -53,13 +53,26 @@ form.addEventListener("submit", event =>{
     event.preventDefault();
     console.log('click')
     
-    API.post('/', {
+   /* API.post('/', {
             name: name.value,
             carbs: carbs.value,
             protein: protein.value,
             fat: fat.value
         
-    }).then((data)=>{
+    })*/
+
+    fetch('https://foodtracker.onrender.com/', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            name: name.value,
+            carbs: carbs.value,
+            protein: protein.value,
+            fat: fat.value
+        })
+    })
+    .then(response => response.json())
+    .then((data)=>{
         console.log(data);
         if(data.error){
             console.log("error")
@@ -91,7 +104,7 @@ form.addEventListener("submit", event =>{
     //GET SAVED FOOD AND LIST THEM
 
 const init = () =>{
-    const API = new FetchWrapper('https://foodtracker.onrender.com/');
+   // const API = new FetchWrapper('https://foodtracker.onrender.com/');
    fetch('https://foodtracker.onrender.com/')
    .then(response => response.json())
    .then(data => {
