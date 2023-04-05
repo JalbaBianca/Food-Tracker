@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "firebase": "^9.18.0",
+    "js-snackbar": "^1.1.2",
+    "snackbar": "^1.1.0",
+    "webpack": "^5.77.0"
+  },
+  "name": "food-tracker",
+  "version": "1.0.0",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "start": "script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
